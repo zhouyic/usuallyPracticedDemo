@@ -1,0 +1,27 @@
+1.structure 结构
+2.represented as 表示/表现为....
+3.machine architecture 计算机体系结构
+4. consists of 由....组成 ;包含
+5.Typically 通常
+6.involve 涉及
+7.compact 紧凑 严谨  简洁的
+8.performs 可执行
+9. For an overview of... 关于.....描述
+10. granularity ranges 粒度范围 
+11.entire 整个
+12. corresponds....to.... 与....对应
+13.mandatory 强制的
+14.put....in....将....放在....
+15.manual installation 手动安装
+16.inject 注入
+17. structured objects 结构化对象
+18.be designed to... 旨在做某事
+19. sensible 合理的
+20.concrete example 具体的例子
+21.suppose 假设
+22.one-off testing 一次性的测试
+23.launch 发射，启动
+24.cumbersome 累赘的 笨重的 麻烦的
+25.alternative 替代的 选择性的
+26.mandatory 必需的
+27.omit  忽略 省略

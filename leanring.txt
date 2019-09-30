@@ -1,0 +1,14 @@
+一.Spring Boot2.0之整合Mybatis
+https://www.cnblogs.com/toov5/p/9814267.html
+
+二.springboot2.0支持https
+SpringBoot配置HTTPS,并实现HTTP访问自动转HTTPS访问
+https://www.jianshu.com/p/8d4aba3b972d
+https://mp.weixin.qq.com/s/JDxJFeC8p5z3JLiymoFwhA
+三.常用的23中设计模式
+https://blog.csdn.net/qq_38024548/article/details/80480831
+https://www.runoob.com/design-pattern/chain-of-responsibility-pattern.html
+
+四.深入springboot原理——一步步分析springboot启动机制（starter机制）
+https://www.cnblogs.com/hjwublog/p/10332042.html
+https://www.jianshu.com/p/943650ab7dfd
