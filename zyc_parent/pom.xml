@@ -11,12 +11,20 @@
 	<groupId>com.zyc</groupId>
 	<artifactId>zyc_parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>zyc_parent</name>
 	<description>父级项目</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<modules>
+		<module>zyc_demo</module>
+		<module>zyc_common</module>
+		<module>zyc-redis</module>
+		<module>zyc-kafka</module>
+		<module>zyc-demo-multi-datasource</module>
+	</modules>
 
 	<dependencies>
 		<dependency>
