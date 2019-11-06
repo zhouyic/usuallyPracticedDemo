@@ -12,3 +12,6 @@ https://www.runoob.com/design-pattern/chain-of-responsibility-pattern.html
 四.深入springboot原理——一步步分析springboot启动机制（starter机制）
 https://www.cnblogs.com/hjwublog/p/10332042.html
 https://www.jianshu.com/p/943650ab7dfd
+
+五. xxl-job 分布时式调度平台
+https://www.xuxueli.com/xxl-job/#/?id=%e3%80%8a%e5%88%86%e5%b8%83%e5%bc%8f%e4%bb%bb%e5%8a%a1%e8%b0%83%e5%ba%a6%e5%b9%b3%e5%8f%b0xxl-job%e3%80%8b
