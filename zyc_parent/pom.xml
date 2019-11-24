@@ -22,7 +22,8 @@
 		<module>zyc_demo</module>
 		<module>zyc_common</module>
 		<module>zyc-redis</module>
-		<module>zyc-kafka</module>
+		<module>zyc-kafka-producer</module>
+		<module>zyc-kafka-consumer</module>
 		<module>zyc-demo-multi-datasource</module>
 	</modules>
 
