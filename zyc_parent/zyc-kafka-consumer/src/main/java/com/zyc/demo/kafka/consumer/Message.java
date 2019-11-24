@@ -1,4 +1,4 @@
-package com.zyc.demo.test.kafka;
+package com.zyc.demo.kafka.consumer;
 
 import lombok.Data;
 
