@@ -8,6 +8,7 @@ https://www.jianshu.com/c/0c9d83802b0c
 https://blog.csdn.net/tmeng521/article/details/90901925
 
 4. kafka拦截器
+https://www.cnblogs.com/frankdeng/p/9425000.html
 https://www.jianshu.com/p/f02fc3640fa9
 
 5. 视频教程

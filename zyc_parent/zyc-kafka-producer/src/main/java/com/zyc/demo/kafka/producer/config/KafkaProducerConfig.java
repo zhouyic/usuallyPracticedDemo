@@ -52,10 +52,10 @@ public class KafkaProducerConfig {
         /**value序列化*/
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
         /**指定拦截器*/
-//        List<String> list = new ArrayList<String>();
-//        list.add("com.zyc.demo.kafka.producer.interceptor.TimeStampPrependerInterceptor");
-//        list.add("com.zyc.demo.kafka.producer.interceptor.CounterInterceptor");
-//        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, list);
+        List<String> list = new ArrayList<String>();
+        list.add("com.zyc.demo.kafka.producer.interceptor.TimeStampPrependerInterceptor");
+        list.add("com.zyc.demo.kafka.producer.interceptor.CounterInterceptor");
+        props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, list);
         /**设置broker响应时间，如果broker在60秒之内还是没有返回给producer确认消息，则认为发送失败*/
         props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60000);
         return props;

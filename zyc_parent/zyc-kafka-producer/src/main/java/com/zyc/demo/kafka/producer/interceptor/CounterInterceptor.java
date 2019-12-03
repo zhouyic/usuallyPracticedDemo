@@ -20,12 +20,12 @@ public class CounterInterceptor implements ProducerInterceptor<String,String> {
     private int successCounter = 0;
     @Override
     public ProducerRecord<String, String> onSend(ProducerRecord<String, String> producerRecord) {
-        return null;
+        return producerRecord;
     }
 
     @Override
     public void onAcknowledgement(RecordMetadata recordMetadata, Exception e) {
-        if(e!=null){
+        if(e==null){
             successCounter++;
         }else{
             errorCounter++;
