@@ -24,6 +24,7 @@
 		<module>zyc-redis</module>
 		<module>zyc-kafka-producer</module>
 		<module>zyc-kafka-consumer</module>
+		<module>zyc-mybatis-plus</module>
 		<module>zyc-demo-multi-datasource</module>
 	</modules>
 
