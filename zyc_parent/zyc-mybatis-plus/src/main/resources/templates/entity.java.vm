@@ -5,6 +5,8 @@ package ${package.Entity};
 import ${pkg};
 #end
 import lombok.Data;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 /**
  * <p>
  * $!{table.comment}

@@ -4,16 +4,12 @@ package com.zyc.demo.mybatis.plus;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableFill;
-import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author zhouyicai
@@ -38,14 +34,14 @@ public class MpGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir("E:\\workpace\\git_repositoris\\usuallyPracticedDemo\\zyc_parent\\zyc-mybatis-plus\\src\\main\\java");
+        gc.setOutputDir("E:\\workpace\\git_repositoris\\usuallyPracticedDemo\\zyc_parent\\zyc_demo\\src\\main\\java");
         gc.setFileOverride(true);
         gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
         gc.setEnableCache(false);// XML 二级缓存
         gc.setBaseResultMap(true);// XML ResultMap
         gc.setBaseColumnList(true);// XML columList
         //gc.setKotlin(true);//是否生成 kotlin 代码
-        gc.setAuthor("Hcl");
+        gc.setAuthor("zhouyic");
 
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
         gc.setMapperName("%sMapper");
@@ -69,7 +65,7 @@ public class MpGenerator {
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/zq_blog?characterEncoding=utf8&serverTimezone=UTC");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/zyc_demo?characterEncoding=utf8&serverTimezone=UTC");
         mpg.setDataSource(dsc);
 
         // 策略配置
@@ -102,7 +98,7 @@ public class MpGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.zyc.demo.mybatis.plus");
+        pc.setParent("com.zyc.demo");
         pc.setController("controller");
         pc.setService("service");
         pc.setServiceImpl("service.impl");
