@@ -1,4 +1,4 @@
-package com.zyc.java.test.thread.testaa;
+package com.zyc.demo.test.thread.testaa;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

@@ -1,4 +1,4 @@
-package com.zyc.java.test.thread.volatiletest;
+package com.zyc.demo.test.thread.volatiletest;
 
 /**
  * 内存可见性问题:当多个线程操作共享数据时,彼此不可见

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyc.demo.mapper.TbUserMapper">
+
+<!-- 通用查询映射结果 -->
+<resultMap id="BaseResultMap" type="com.zyc.demo.entity.model.TbUser">
+    <id column="uid" property="uid" />
+    <result column="name" property="name" />
+    <result column="mobile" property="mobile" />
+    <result column="status" property="status" />
+    <result column="create_by" property="createBy" />
+    <result column="create_time" property="createTime" />
+    <result column="update_by" property="updateBy" />
+    <result column="update_time" property="updateTime" />
+</resultMap>
+
+<!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, name, mobile, status, create_by, create_time, update_by, update_time
+    </sql>
+
+    <select id="findUser" parameterType="com.zyc.demo.entity.model.TbUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from tb_user
+        <where>
+            <if test = "tbUser.uid != null ">
+               AND uid = #{tbUser.uid}
+            </if>
+            <if test = "tbUser.name != null">
+               AND name = #{tbUser.name}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateUser" parameterType="com.zyc.demo.entity.model.TbUser">
+        UPDATE tb_user
+        <set>
+            <if test="name != null">
+                name = #{name}
+            </if>
+            <if test="mobile != null">
+                mobile = #{mobile}
+            </if>
+            <if test="status != null">
+                status = #{status}
+            </if>
+            <if test="createBy != null">
+                create_by = #{createBy}
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime}
+            </if>
+        </set>
+        <where>
+            uid = #{uid}
+        </where>
+    </update>
+</mapper>

@@ -1,4 +1,4 @@
-package com.zyc.java.test.thread.concurrent.countdownLatch;
+package com.zyc.demo.test.thread.concurrent.countdownLatch;
 
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;

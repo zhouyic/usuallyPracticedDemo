@@ -5,7 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages ="com.zyc.demo.dao")
+/**扫描包*/
+@MapperScan({"com.zyc.demo.mapper"})
 public class ZycDemoApplication {
 
 	public static void main(String[] args) {

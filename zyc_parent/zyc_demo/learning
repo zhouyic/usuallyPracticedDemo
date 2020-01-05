@@ -1,0 +1,27 @@
+1. org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.zyc.demo.mapper.TbUserMapper.findUser
+报错场景: 在mybatis-plus中使用mybatis 扫描java包下的mapper下的xml文件
+解决: 在pom文件中配置:
+<build>
+    <resources>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </resource>
+        <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+        </resource>
+	</resources>
+</build>
+在application.yml 配置,扫描java包下的mapper下的xml文件不管用
+mybatis-plus:
+     mapper-locations: classpath*:com/zyc/demo/mapper/*.xml
+
+
+2. Spring Boot（十二）单元测试JUnit
+https://www.cnblogs.com/vipstone/p/9908545.html
+
