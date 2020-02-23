@@ -20,6 +20,7 @@
 	</properties>
 	<modules>
 		<module>zyc_demo</module>
+		<module>zyc_demo_swagger</module>
 		<module>zyc_common</module>
 		<module>zyc-redis</module>
 		<module>zyc-kafka-producer</module>

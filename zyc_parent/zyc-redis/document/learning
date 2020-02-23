@@ -1,0 +1,10 @@
+一.redis集群+JedisCluster+lua脚本实现分布式锁
+https://blog.csdn.net/qq_20597727/article/details/85235602
+
+
+二.Redisson实现Redis分布式锁的N种姿势
+https://www.jianshu.com/p/f302aa345ca8
+
+三.Java分布式架构学习视频高并发分布式锁详解 (亲测视频讲解不错)
+https://www.bilibili.com/video/av78063277
+

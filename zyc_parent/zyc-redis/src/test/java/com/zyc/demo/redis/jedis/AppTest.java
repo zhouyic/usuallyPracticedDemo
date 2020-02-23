@@ -19,7 +19,7 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        String limit = jedisCluster.get("13500000069_7780077793095431115_status");
+        String limit = jedisCluster.get("aa");
         System.out.println(limit);
 
     }
