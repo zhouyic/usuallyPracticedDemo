@@ -1,9 +1,12 @@
 package com.zyc.jwtserver.config;
 import com.zyc.jwtserver.auth.MyLoginoutSuccessHandler;
 import com.zyc.jwtserver.auth.MyUserDetailsService;
+import com.zyc.jwtserver.auth.jwt.JwtAuthenticationTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -11,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -31,9 +35,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     MyLoginoutSuccessHandler myLoginoutSuccessHandler;
     @Resource
     DataSource dataSource;
+    @Resource
+    JwtAuthenticationTokenFilter authenticationTokenFilter;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.logout()
+        http.addFilterBefore(authenticationTokenFilter, UsernamePasswordAuthenticationFilter.class).logout()
                 .logoutUrl("/signout")
 //                .logoutSuccessUrl("/afterSignout.html")
                 .deleteCookies("JSESSIONID", "remember-me")
@@ -45,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .tokenRepository(persistentTokenRepository())
             .and().csrf().disable()  //关闭跨站防御攻击
             .authorizeRequests()
-                .antMatchers("/login").permitAll()
+                .antMatchers("/login","/authentication","/refreshToken").permitAll()
                 .antMatchers("/index").authenticated()
                 .anyRequest().access("@myRBACService.hasPermission(request,authentication)")
             .and().sessionManagement()
@@ -92,5 +98,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
         jdbcTokenRepository.setDataSource(dataSource);
         return jdbcTokenRepository;
+    }
+    @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 }
