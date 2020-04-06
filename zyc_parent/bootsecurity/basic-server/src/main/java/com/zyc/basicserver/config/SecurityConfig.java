@@ -2,6 +2,7 @@ package com.zyc.basicserver.config;
 import com.zyc.basicserver.auth.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -21,6 +22,7 @@ import javax.sql.DataSource;
  * @date 2020/4/2 23:10
  */
 @Configuration
+@EnableScheduling
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     MyAuthenticationSuccessHandler myAuthenticationSuccessHandler;
@@ -50,13 +52,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()  // 指定formLogin模式的登录认证
                 .loginPage("/login.html")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/index")
-                //                .failureUrl("/login.html")
-                //                .successHandler(myAuthenticationSuccessHandler) //注入自定义登录成功handler
+//                .defaultSuccessUrl("/index")
+                //.failureUrl("/login.html")
+                .successHandler(myAuthenticationSuccessHandler) //注入自定义登录成功handler
                 .failureHandler(myAuthenticationFailureHandler)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login.html", "/login", "/afterSignout.html").permitAll()
+                .antMatchers("/login.html","/login", "/afterSignout.html").permitAll()
                 .antMatchers("/index").authenticated()
                 .anyRequest().access("@myRBACService.hasPermission(request,authentication)")
                 /* .antMatchers("/biz1", "/biz2")  //需要对外暴露的资源路径

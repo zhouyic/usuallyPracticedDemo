@@ -28,7 +28,7 @@ public class MyAuthenticationSuccessHandler extends SavedRequestAwareAuthenticat
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
        if(loginType.equals("JSON")){
             response.setContentType("application/json;charset=UTF-8");
-            response.getWriter().write(objectMapper.writeValueAsString(BaseResponse.success()));
+            response.getWriter().write(objectMapper.writeValueAsString(BaseResponse.success("/index")));
        }else{
            //跳转到登录页面
            super.onAuthenticationSuccess(request, response, authentication);
