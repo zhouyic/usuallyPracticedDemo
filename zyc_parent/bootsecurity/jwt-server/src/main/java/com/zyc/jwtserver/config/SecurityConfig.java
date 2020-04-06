@@ -44,22 +44,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .logoutSuccessUrl("/afterSignout.html")
                 .deleteCookies("JSESSIONID", "remember-me")
                 .logoutSuccessHandler(myLoginoutSuccessHandler)
-            .and().rememberMe()
+                .and().rememberMe()
                 .rememberMeParameter("remember-me-new")
                 .rememberMeCookieName("remember-me-name")
                 .tokenValiditySeconds(2 * 24 * 60 * 60)
                 .tokenRepository(persistentTokenRepository())
-            .and().csrf().disable()  //关闭跨站防御攻击
-            .authorizeRequests()
-                .antMatchers("/login","/authentication","/refreshToken").permitAll()
+                .and().csrf().disable()  //关闭跨站防御攻击
+                .authorizeRequests()
+                .antMatchers("/login", "/authentication", "/refreshToken").permitAll()
                 .antMatchers("/index").authenticated()
                 .anyRequest().access("@myRBACService.hasPermission(request,authentication)")
-            .and().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-                .invalidSessionUrl("/login.html")
-                .sessionFixation().migrateSession()
-                .maximumSessions(1) //当前登录用户为1
-                .maxSessionsPreventsLogin(false); //当前登录两用户,剔除第一个用户,下线
+                .and().sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
     }
 
 
