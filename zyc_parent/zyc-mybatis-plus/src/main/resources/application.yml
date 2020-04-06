@@ -6,7 +6,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/zq_blog?serverTimezone=UTC&characterEncoding=utf-8
+    url: jdbc:mysql://127.0.0.1:3306/zyc_demo?serverTimezone=UTC&characterEncoding=utf-8
     username: root
     password: root
 #MyBatis

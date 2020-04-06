@@ -33,3 +33,9 @@ https://blog.csdn.net/fengfengchen95/article/details/82910308
 
 5.springboot2.0整合logback日志(详细)
 https://www.cnblogs.com/zhangjianbing/p/8992897.html
+
+
+6.Maven配置阿里云镜像提示没有证书
+https://segmentfault.com/q/1010000021595053/
+
+在maven 的 runner 的VM Options 加入 -Dmaven.wagon.http.ssl.insecure=true
