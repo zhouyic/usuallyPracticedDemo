@@ -1,6 +1,6 @@
 # pingshilianxidedemo
 
-#### Description aaa
+#### Description
 平时练习的demo
 
 #### Software Architecture
