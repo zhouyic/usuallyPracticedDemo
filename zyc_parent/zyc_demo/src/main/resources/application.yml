@@ -1,0 +1,7 @@
+server:
+  port: 9090 #访问端口
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  profiles:
+    active: dev
