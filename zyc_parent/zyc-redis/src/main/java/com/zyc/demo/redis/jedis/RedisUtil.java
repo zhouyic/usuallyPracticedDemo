@@ -13,7 +13,8 @@ import redis.clients.jedis.JedisCluster;
  * @date 2019/3/2 16:04
  */
 @Component
-public class RedisUtil { private static final Logger log    = LoggerFactory.getLogger(RedisUtil.class);
+public class RedisUtil {
+    private static final Logger log    = LoggerFactory.getLogger(RedisUtil.class);
 
     @Autowired
     private JedisCluster jedisCluster;
