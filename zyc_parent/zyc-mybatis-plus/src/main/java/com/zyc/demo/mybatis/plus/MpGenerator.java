@@ -90,7 +90,7 @@ public class MpGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("tb_give_product");
+        strategy.setInclude("tb_sales_info");
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
         mpg.setStrategy(strategy);
 
