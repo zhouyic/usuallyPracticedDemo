@@ -1,0 +1,20 @@
+package ${package.Controller};;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import ${package.Service}.${table.serviceName};
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+/**
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@RestController
+@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
+public class ${table.controllerName}{
+    private final Logger logger = LoggerFactory.getLogger(${table.controllerName}.class);
+    @Autowired
+    public ${table.serviceName} i${entity}Service;
+
+}

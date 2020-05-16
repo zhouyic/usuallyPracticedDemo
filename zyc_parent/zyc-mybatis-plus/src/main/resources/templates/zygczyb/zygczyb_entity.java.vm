@@ -1,0 +1,20 @@
+package ${package.Entity};
+import lombok.Data;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+/**
+ * <p>
+ * $!{table.comment}
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Data
+@ApiModel("")
+public class ${entity} {
+#foreach($field in ${table.fields})
+    @ApiModelProperty("${field.comment}")
+    private ${field.propertyType} ${field.propertyName};
+#end
+}
