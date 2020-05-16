@@ -33,12 +33,4 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     #不加这个查询数据为空时，字段将被隐藏
-#logging:
-#  level:
-#    root: trace
-#    com.zyc.demo.mapper: debug
 
-log:
-  level: info
-  path: E:/logs/web_app
-  name: zyc_demo

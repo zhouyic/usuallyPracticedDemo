@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.zyc.demo.service.TbRoleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+
 /**
  *
  * @author Hcl
@@ -16,5 +19,4 @@ public class TbRoleController{
     private final Logger logger = LoggerFactory.getLogger(TbRoleController.class);
     @Autowired
     public TbRoleService iTbRoleService;
-
 }
