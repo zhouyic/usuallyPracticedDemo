@@ -37,7 +37,7 @@ public class KafkaProducerService {
         /**发送之前设置消息回调*/
 //        kafkaTemplate.setProducerListener(kafkaSendResultListener);
         /**topic-ideal为主题*/
-        kafkaTemplate.send("shuaige", JSON.toJSONString(message));
+        kafkaTemplate.send("heima", JSON.toJSONString(message));
         /**发送消息的时候需要休眠一下，否则发送时间较长的时候会导致进程提前关闭导致无法调用回调时间。主要是因为KafkaTemplate发送消息是采取异步方式发送的*/
         Thread.sleep(1000);
 

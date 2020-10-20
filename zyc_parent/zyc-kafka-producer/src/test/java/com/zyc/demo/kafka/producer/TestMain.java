@@ -4,6 +4,7 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +26,14 @@ public class TestMain {
         props.put("linger.ms", 1);
         props.put("buffer.memory", 33554432);
 
-        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         // 2 构建拦截链
         List<String> list = new ArrayList<String>();
         list.add("com.zyc.demo.kafka.producer.interceptor.CounterInterceptor");
         list.add("com.zyc.demo.kafka.producer.interceptor.TimeStampPrependerInterceptor");
         props.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, list);
-        String topic = "shuaige";
+        String topic = "heima";
         Producer<String, String> producer = new KafkaProducer<>(props);
         // 3 发送消息
         for (int i = 0; i < 10; i++) {
