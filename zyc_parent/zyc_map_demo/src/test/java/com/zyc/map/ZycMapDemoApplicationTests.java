@@ -8,6 +8,8 @@ class ZycMapDemoApplicationTests {
 
     @Test
     void contextLoads() {
+
+        System.out.println("测试代码1");
     }
 
 }
